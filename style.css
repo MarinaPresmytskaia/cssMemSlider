@@ -1,5 +1,8 @@
 :root {
   --bg-color: rgb(53, 53, 53);
+  --color-btn: rgb(121, 119, 119);
+  --color-btn-hover: rgb(7, 7, 7);
+  --color-btn-checked: rgb(198, 207, 215);
 }
 
 * {
@@ -10,7 +13,7 @@
 }
 
 .slider {
-  position: relative;  
+  position: relative;
 }
 
 .slider-inner {
@@ -18,6 +21,7 @@
   overflow: hidden;
   width: 50%;
   margin: 5rem auto;
+  height: 100vh;
 }
 
 .slide-show:checked + .slide-item {
@@ -33,6 +37,42 @@
 
 .slide-item img {
   display: block;
+  position: absolute;
   height: 70vh;
+  width: 100%;
+}
+
+.slider-controls {
+  list-style: none;
+  position: absolute;
+  right: 0;
+  bottom: 25%;
+}
+
+.slider-controls li {
+  display: inline-block;
+  margin: 5px 8px;
+}
+
+.slider-btn {
+  color: var(--color-btn);
+  cursor: pointer;
+  display: block;
+  font-size: 40px;
+}
+
+#slide-1:checked ~ .slider-controls li:nth-child(1) .slider-btn,
+#slide-2:checked ~ .slider-controls li:nth-child(2) .slider-btn,
+#slide-3:checked ~ .slider-controls li:nth-child(3) .slider-btn,
+#slide-4:checked ~ .slider-controls li:nth-child(4) .slider-btn {
+  color: var(--color-btn-checked);
+}
+
+.slider-btn:hover {
+  color: var(--color-btn-hover);
+}
+
+.slider-btn:active {
+  color: var(--color-btn);
 }
 

@@ -1,0 +1,99 @@
+:root {
+  --bg-color: rgb(53, 53, 53);
+  --color-btn: rgb(121, 119, 119);
+  --color-btn-hover: rgb(7, 7, 7);
+  --color-btn-checked: rgb(198, 207, 215);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+}
+
+.slider {
+  position: relative;
+}
+
+.slider-inner {
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  margin: 5rem auto;
+  height: 100vh;
+}
+
+.slide-show:checked + .slide-item {
+  position: static;
+  opacity: 1;
+}
+
+.slide-item {
+  position: absolute;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.slide-item img {
+  display: block;
+  position: absolute;
+  height: 70vh;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.slide-item p {
+  display: block;
+  position: absolute;
+  bottom: 23%;
+  left: 0;
+  font-size: 30px;
+  color: var(--color-btn-checked)
+}
+
+.slider-controls {
+  list-style: none;
+  position: absolute;
+  right: 0;
+  bottom: 23%;
+}
+
+.slider-controls li {
+  display: inline-block;
+  margin: 5px 8px;
+}
+
+.slider-btn {
+  color: var(--color-btn);
+  cursor: pointer;
+  display: block;
+  font-size: 40px;
+}
+
+.slider-btn:hover {
+  color: var(--color-btn-hover);
+}
+
+.slider-btn:active {
+  color: var(--color-btn);
+}
+
+#slide-1:checked ~ .slider-controls li:nth-child(1) .slider-btn,
+#slide-2:checked ~ .slider-controls li:nth-child(2) .slider-btn,
+#slide-3:checked ~ .slider-controls li:nth-child(3) .slider-btn,
+#slide-4:checked ~ .slider-controls li:nth-child(4) .slider-btn {
+  color: var(--color-btn-checked);
+}
+
+@media (max-width: 420px) {
+  .slider-controls {    
+    right: 33%;
+  }
+
+  .slide-item p {   
+    bottom: 19%;
+}
+
+
+

@@ -19,7 +19,7 @@
 .slider-inner {
   position: relative;
   overflow: hidden;
-  width: 50%;
+  width: 90%;
   margin: 5rem auto;
   height: 100vh;
 }
@@ -32,7 +32,7 @@
 .slide-item {
   position: absolute;
   opacity: 0;
-  transition: opacity 0.7ms ease-out;
+  transition: 0.4s ease-in-out;
 }
 
 .slide-item img {
@@ -40,12 +40,13 @@
   position: absolute;
   height: 70vh;
   width: 100%;
+  border-radius: 15px;
 }
 
 .slide-item p {
   display: block;
   position: absolute;
-  bottom: 25%;
+  bottom: 23%;
   left: 0;
   font-size: 30px;
   color: var(--color-btn-checked)
@@ -55,7 +56,7 @@
   list-style: none;
   position: absolute;
   right: 0;
-  bottom: 25%;
+  bottom: 23%;
 }
 
 .slider-controls li {
@@ -85,6 +86,14 @@
   color: var(--color-btn-checked);
 }
 
+@media (max-width: 420px) {
+  .slider-controls {    
+    right: 33%;
+  }
+
+  .slide-item p {   
+    bottom: 19%;
+}
 
 
 
